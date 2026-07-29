@@ -4,7 +4,7 @@ description: Create a merge request in gitlab
 ---
 
 ## Process
-1. Use the gitlab mcp server to check what is the default main branch for the reop: "main" or "master".
-2. Create a merge request in Gitlab, from the Jira subtask branch to the main branch. use the gitlab mcp server.
-    1.1 The title should be the same as first commit message, from jira-commit-push: ${issueKey} [${subTaskKey}] ${issueSummary} [${subTaskSummary}]
-    2.2 Assign to the user corresponding to the git commit author name
+1. Determine the repo's default branch (`main` or `master`) via the GitLab MCP server.
+2. Create a merge request from the current subtask branch to the default branch (GitLab MCP server):
+   - Title: `${issueKey} [${subTaskKey}] ${issueSummary} [${subTaskSummary}]` (same as the commit message from jira-commit-push)
+   - Assignee: the user matching the git commit author name
