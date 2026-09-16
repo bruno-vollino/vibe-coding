@@ -12,3 +12,4 @@ description: Create a merge request in gitlab
 2. Create a merge request from the current subtask branch to the default branch (GitLab MCP server):
    - Title: `${issueKey} [${subTaskKey}] ${issueSummary} [${subTaskSummary}]` (same as the commit message from jira-commit-push)
    - Assignee: the user matching the git commit author name
+3. Always show the merge request web URL at the end of the response.
