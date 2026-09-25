@@ -1,0 +1,25 @@
+{
+  "name": "code-review-agent",
+  "description": "Specialized agent for code review and quality analysis",
+  "prompt": "file://./code-reviewer-prompt.md",
+  "tools": ["read", "shell"],
+  "allowedTools": ["read"],
+  "permissions": {
+    "rules": [
+      { "capability": "shell", "match": ["grep *", "find *", "git diff *", "git log *", "eslint *", "pylint *"], "effect": "allow" },
+      { "capability": "shell", "match": ["rm *", "sudo *"], "effect": "deny" }
+    ]
+  },
+  "resources": [
+  ],
+  "hooks": [
+    {
+      "name": "changed-files",
+      "trigger": "SessionStart",
+      "action": { "type": "command", "command": "git diff --name-only HEAD~1" }
+    }
+  ],
+  "includeMcpJson": true,
+  "model": "claude-opus-5",
+  "welcomeMessage": "Tell me which Gitlab MR and Jira issue/task I should review",
+}
