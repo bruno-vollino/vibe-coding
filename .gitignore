@@ -1,0 +1,14 @@
+# Machine-specific generated artifacts never belong in this config repo.
+# The workspace repo index lives in <workspace-root>/.kiro/steering/git-repositories.md
+repos.txt
+workspace-repos.md
+
+# Review scratch artifacts (comment payloads etc.)
+.review/
+
+# Agent config backups from /upgrade-agent
+*.json.bak
+
+# Python bytecode from running bundled skill scripts
+__pycache__/
+*.pyc

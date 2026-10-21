@@ -1,31 +1,36 @@
-﻿# Directives
-- Do not ever change files outside my workspace
-- If I give you permission, you can modify my global steering files on my profile's .kiro directory
+﻿---
+inclusion: always
+---
 
-# General Coding Preferences
+# Directives
+- Never change files outside my workspace
+- With my permission, you may edit my global steering files in my profile's .kiro directory
+
+# Coding Preferences
 
 ## Code Style
-- Prefer explicit types over `var`/`val` type inference in Java; use inference in Kotlin where the type is obvious
-- Keep methods short and focused — extract helpers rather than writing long methods
-- Use descriptive names without abbreviations (except standard ones like `id`, `url`, `config`)
-- Minimal inline comments — code should be self-documenting; use comments for "why", not "what"
-- Private constructors on utility classes with `// no-impl` body comment
-- Always use Unix-style line endings (`\n`). Never use carriage return (`\r`) or Windows-style `\r\n`
+- Java: explicit types over `var`. Kotlin: inference when the type is obvious
+- Short, focused methods; extract helpers over long methods
+- Descriptive names, no abbreviations (except `id`, `url`, `config`)
+- Comments explain "why", not "what"; code should be self-documenting
+- Utility classes: private constructor with `// no-impl` body
+- Always Unix line endings (`\n`), never `\r` or `\r\n`
 
 ## Architecture
-- Constructor injection over field injection for dependencies
-- `@Configuration` classes with `@Bean` methods and `@Import` for modular composition
-- Reactive-first: prefer `Mono`/`Flux` composition over blocking operations
-- Use `Optional<T>` for nullable return values in Java; use Kotlin's nullable types (`T?`) in Kotlin
+- Constructor injection over field injection
+- `@Configuration` + `@Bean` + `@Import` for modular composition
+- Reactive-first: prefer `Mono`/`Flux` over blocking
+- Nullable returns: `Optional<T>` in Java, `T?` in Kotlin
 
 ## Error Handling
-- Handle errors through reactive composition (`onErrorResume`, `onErrorMap`) rather than try-catch
-- Propagate errors as `Mono.error()` / `Flux.error()` in reactive chains
-- Avoid swallowing exceptions silently
+- Handle errors via reactive composition (`onErrorResume`, `onErrorMap`), not try-catch
+- Propagate as `Mono.error()` / `Flux.error()` in reactive chains
+- Never swallow exceptions silently
 
-## Git & Branching
+## Git
+- Prefer the git MCP server over shell git commands; fall back to shell only for operations the MCP server lacks (e.g. blame, rev-parse, merge-base, ls-files, cat-file, fetch)
+- Pass the command before its arguments when possible
 
 ## Documentation
-- Keep README.md files up to date with build commands, architecture, and tech stack
-- Javadoc on public API methods in library modules (ses-soccer)
-- No Javadoc required on internal implementation classes
+- Keep README.md current (build commands, architecture, tech stack)
+- Javadoc on public API in library modules; none required on internal classes

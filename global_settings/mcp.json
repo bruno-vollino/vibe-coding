@@ -1,0 +1,52 @@
+{
+  "mcpServers": {
+    "fetch": {
+      "command": "uvx",
+      "args": [
+        "mcp-server-fetch"
+      ],
+      "env": {},
+      "disabled": false,
+      "autoApprove": []
+    },
+    "git": {
+      "command": "uvx",
+      "args": ["mcp-server-git"]
+    },
+    "maven": {
+      "command": "uvx",
+      "args": [
+        "maven-mcp-server@latest"
+      ],
+      "disabled": false
+    },
+    "intellij-mpc-server": {
+      "type": "sse",
+      "url": "http://127.0.0.1:64392/sse",
+      "headers": {},
+      "autoApprove": [
+        "get_symbol_info",
+        "execute_run_configuration",
+        "search_symbol",
+        "read_file",
+        "build_project",
+        "get_run_configurations",
+        "get_file_problems",
+        "list_directory_tree",
+        "get_project_modules",
+        "search_file",
+        "skill_search",
+        "xdebug_set_breakpoint",
+        "xdebug_start_debugger_session",
+        "xdebug_control_session",
+        "xdebug_get_debugger_status",
+        "xdebug_remove_breakpoint",
+        "lint_files",
+        "apply_patch",
+        "get_repositories",
+        "git_status"
+      ],
+      "disabled": false
+    }
+  }
+}
