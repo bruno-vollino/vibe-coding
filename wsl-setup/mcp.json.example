@@ -1,0 +1,25 @@
+{
+  "mcpServers": {
+    "intellij-mpc-server": {
+      "url": "http://127.0.0.1:64392/stream",
+      "headers": {},
+      "disabled": false,
+      "autoApprove": [
+        "get_symbol_info",
+        "search_symbol",
+        "read_file",
+        "build_project",
+        "get_run_configurations",
+        "execute_run_configuration",
+        "get_file_problems",
+        "list_directory_tree",
+        "get_project_modules",
+        "search_file",
+        "lint_files",
+        "apply_patch",
+        "get_repositories",
+        "git_status"
+      ]
+    }
+  }
+}

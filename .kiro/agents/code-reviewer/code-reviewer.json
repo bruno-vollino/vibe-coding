@@ -1,5 +1,5 @@
 {
-  "name": "code-review-agent",
+  "name": "code-reviewer",
   "description": "Code review and quality analysis. Reads Jira, GitLab MRs and CI logs, reviews the diff, and posts diff-anchored review comments via the gitlab-diff-comments skill.",
   "prompt": "file://./code-reviewer-prompt.md",
   "tools": [
